@@ -12,6 +12,10 @@ describe Trainer do
     expect(subject.name).to eq 'trainer'
   end
 
+  it 'initializes with an empty collection' do
+    expect(subject.collection).to eq []
+  end
+
   it 'can change position' do
     subject.position = [1,1]
     expect(subject.position).to eq [1,1]
