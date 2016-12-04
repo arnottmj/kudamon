@@ -2,11 +2,15 @@ require 'nearby_coords'
 
 class FindNearby
 
-  def self.search all_kudamon, player 
-    nearby_coords = NearbyCoords.search(player)
+  def initialize all_kudamon
+    @all_kudamon = all_kudamon
+  end
+
+  def search trainer, coord_finder = NearbyCoords 
+    nearby_coords = coord_finder.search(trainer)
     nearby_kudamon = []
 
-    all_kudamon.list.each do |kudamon|
+    @all_kudamon.list.each do |kudamon|
       if (nearby_coords.include? kudamon.position) && !kudamon.captured
         nearby_kudamon.push kudamon
       end

@@ -1,4 +1,4 @@
-class AllPlayers
+class AllTrainers
 
   attr_reader :list
   
@@ -6,7 +6,7 @@ class AllPlayers
     @list = []
   end
 
-  def add_player player
-    @list.push player
+  def add_player trainer
+    @list.push trainer
   end
 end
