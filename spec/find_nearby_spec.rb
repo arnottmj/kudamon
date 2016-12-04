@@ -9,8 +9,10 @@ describe FindNearby do
     let(:trainer) {double :trainer, position: [0,0]}
     let(:all_kudamon) {double :all_kudamon, list: [chikapu, rockdude]}
 
+    subject {FindNearby.new(all_kudamon)}
+
     it 'will return an array of nearby kudamon' do
-      expect(FindNearby.search(all_kudamon, trainer)).to eq [chikapu, rockdude]
+      expect(subject.search(trainer)).to eq [chikapu, rockdude]
     end
   end
 
@@ -20,8 +22,10 @@ describe FindNearby do
     let(:trainer) {double :trainer, position: [0,0]}
     let(:all_kudamon) {double :all_kudamon, list: [mewpu]}
 
+    subject {FindNearby.new(all_kudamon)}
+
     it 'will return an empty array' do
-      expect(FindNearby.search(all_kudamon, trainer)).to eq []
+      expect(subject.search(trainer)).to eq []
     end
   end
 
@@ -30,8 +34,10 @@ describe FindNearby do
     let(:trainer) {double :trainer, position: [0,0]}
     let(:all_kudamon) {double :all_kudamon, list: [sourbulb]}
 
+    subject {FindNearby.new(all_kudamon)}
+
     it 'will return an empty array' do
-      expect(FindNearby.search(all_kudamon, trainer)).to eq []
+      expect(subject.search(trainer)).to eq []
     end
   end
 end

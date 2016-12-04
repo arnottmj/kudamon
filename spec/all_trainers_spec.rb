@@ -1,11 +1,11 @@
-require 'all_players'
+require 'all_trainers'
 
-describe AllPlayers do
+describe AllTrainers do
 
-  let(:player) {double :player}
+  let(:trainer) {double :trainer}
   
   it 'can store players' do
-    subject.add_player(:player)
-    expect(subject.list).to eq [:player]
+    subject.add_player(:trainer)
+    expect(subject.list).to eq [:trainer]
   end
 end
