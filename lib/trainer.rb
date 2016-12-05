@@ -1,6 +1,7 @@
 class Trainer
 
-  attr_accessor :position, :name, :collection
+  attr_accessor :position, :name 
+  attr_reader :collection
 
   def initialize name, position
     @name = name
