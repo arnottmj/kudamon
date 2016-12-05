@@ -4,10 +4,14 @@ class Rockdude
 
   include TypeRock
 
-  attr_reader :position, :captured
+  attr_accessor :captured
 
   def initialize position
     @position = position
     @captured = false
+  end
+
+  def position
+    @position.clone
   end
 end
