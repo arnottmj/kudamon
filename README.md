@@ -1,12 +1,12 @@
-### Kudamon
+# Kudamon
 
-# Setup
+### Setup
 
 This is a game run in irb. It has been written in ruby with testing using rspec. To install the required gems run the `bundle` command. 
 
-ALl of the ruby files in the lib directory need to be required. In order to do this navigate to the lib directory and run `require ./setup.rb`
+ALl of the ruby files in the lib directory need to be required. In order to do this navigate to the lib directory and run `require './setup.rb'` in irb.
 
-# Configure the game
+### Configure the game
 
 This app requires their to be a game master. 
 
@@ -35,7 +35,7 @@ THe game master must then instantiate the `FindNearby` class using the instance 
 find_nearby = FindNearby.new(all_kudamon)
 ```
 
-# Playing the game
+### Playing the game
 
 The interface for a player is their instance of the `Trainer` class and the instance of the `FindNearby` class.
 
@@ -67,13 +67,13 @@ The kudamon is now marked as captured and can no longer be captued by anyone els
 trainer_1.collection
 ```
 
-# Limitations
+### Limitations
 
 - Currently there are no gaurd controls for arguments being passed. Fore example, it would be possible to pass a string as a position for kudamon/trainers.
 - Currently, it is possible to directly access the `captured` instance variable of kudamon. This means that trainers could unwillingly/maliciously mark a kudamon as not captured, allowing it to be recpatuured whilst still existing in a trainers collecion. More time would have allowed for a refactoring of the code to create a new `Capturing` class which queries whether a kudamon is captured by searching if it exists in a trainers collection.
 - Similar to above, trainers have access to the `collection` instance variable.
 
-# Into the Future
+### Into the Future
 
 - spawn new kudamon once one has been captured at a location. Base the spawn number on how many players are nearby.
 - introduce the ability for kudamon/players to battle.
