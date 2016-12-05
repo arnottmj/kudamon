@@ -1,7 +1,6 @@
 class Trainer
 
   attr_accessor :position, :name 
-  attr_reader :collection
 
   def initialize name, position
     @name = name
@@ -12,5 +11,9 @@ class Trainer
   def capture kudamon
     kudamon.captured = true
     @collection.push kudamon
+  end
+
+  def collection
+    @collection.clone
   end
 end

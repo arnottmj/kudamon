@@ -4,13 +4,13 @@
 
 This is a game run in irb. It has been written in ruby with testing using rspec. To install the required gems run the `bundle` command. 
 
-ALl of the ruby files in the lib directory need to be required. In order to do this navigate to the lib directory and run `require './setup.rb'` in irb.
+All of the ruby files in the lib directory need to be required. In order to do this navigate to the lib directory and run `require './setup.rb'` in irb.
 
 ### Configure the game
 
 This app requires their to be a game master. 
 
-First, the game master must spawn kudamon, specifying a location. THey must then add this to a list of global kudamon. For example,
+First, the game master must spawn kudamon, specifying a location. They must then add this to a list of global kudamon. For example,
 
 ```ruby
 chikapu = Chikapu.new([0,0])
@@ -29,7 +29,7 @@ trainer_2 = Trainer.new('trainer_2', [2,1])
 
 At present, the virtual map is the whole of the 2D plane.
 
-THe game master must then instantiate the `FindNearby` class using the instance of AllKudamon that has already been created:
+The game master must then instantiate the `FindNearby` class using the instance of AllKudamon that has already been created:
 
 ```ruby
 find_nearby = FindNearby.new(all_kudamon)
@@ -70,11 +70,11 @@ trainer_1.collection
 ### Limitations
 
 - Currently there are no gaurd controls for arguments being passed. Fore example, it would be possible to pass a string as a position for kudamon/trainers.
-- Currently, it is possible to directly access the `captured` instance variable of kudamon. This means that trainers could unwillingly/maliciously mark a kudamon as not captured, allowing it to be recpatuured whilst still existing in a trainers collecion. More time would have allowed for a refactoring of the code to create a new `Capturing` class which queries whether a kudamon is captured by searching if it exists in a trainers collection.
-- Similar to above, trainers have access to the `collection` instance variable.
+- Currently, it is possible to directly access the `captured` instance variable of kudamon. This means that trainers could unwillingly/maliciously mark a kudamon as not captured, allowing it to be recpatuured whilst still existing in a trainers collection. More time would have allowed for a refactoring of the code to create a new `Capturing` class which queries whether a kudamon is captured by searching if it exists in a trainers collection.
 
 ### Into the Future
 
+- allow trainers to release kudamon.
 - spawn new kudamon once one has been captured at a location. Base the spawn number on how many players are nearby.
 - introduce the ability for kudamon/players to battle.
 
