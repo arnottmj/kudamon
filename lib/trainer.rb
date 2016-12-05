@@ -9,8 +9,12 @@ class Trainer
   end
 
   def capture kudamon
-    kudamon.captured = true
-    @collection.push kudamon
+    if !kudamon.captured
+      kudamon.captured = true
+      @collection.push kudamon
+    else
+      raise 'this kudamon has already been captured by your or another trainer' 
+    end
   end
 
   def collection

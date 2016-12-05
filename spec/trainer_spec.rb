@@ -24,9 +24,14 @@ describe Trainer do
     expect(subject.position).to eq [1,1]
   end
 
-  it 'can capture kudamon' do
+  it 'can capture free kudamon' do
     subject.capture(chikapu)
     expect(chikapu.captured).to eq true
     expect(subject.collection).to eq [chikapu]
+  end
+
+  it 'cannot capture kudamon that are already captured' do
+    subject.capture(chikapu)
+    expect{subject.capture(chikapu)}.to raise_error 'this kudamon has already been captured by your or another trainer'
   end
 end
