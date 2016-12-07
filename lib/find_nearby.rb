@@ -1,4 +1,4 @@
-require 'nearby_coords'
+require_relative 'nearby_coords'
 
 class FindNearby
 

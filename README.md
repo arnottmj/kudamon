@@ -4,7 +4,11 @@
 
 This is a game run in irb. It has been written in ruby with testing using rspec. To install the required gems run the `bundle` command. 
 
-All of the ruby files in the lib directory need to be required. In order to do this navigate to the lib directory and run `require './setup.rb'` in irb.
+All of the ruby files in the lib directory need to be required. In order to do this navigate to the root directory and run:
+
+```ruby
+Dir[File.dirname(__FILE__) + '/lib/*.rb'].each {|file| require file}
+```
 
 ### Configure the game
 
